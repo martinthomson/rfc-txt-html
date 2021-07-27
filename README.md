@@ -24,23 +24,23 @@ Try a side-by-side comparison of [RFC
 
 This isn't perfect, but it's close.  Known differences:
 
-* All headings are bold, even non-numbered ones (¯\_(ツ)_/¯).
-
-* Anchors for section numbers aren't highlighted as links (no problem).
+* The stylesheet is incomplete (not great).
 
 * Table borders are rendered with lines, not ASCII art (arguably better).
 
 * Pilcrows are rendered (useful).
 
 * Sentences do not end with double-spacing (probably neutral), so paragraph
-  breaks aren't 100% compatible.
+  breaks aren't 100% identical.
 
 * Centred items are properly centred, not quantized (whatever).
 
 * Ordered lists with ten or more items don't render identically (maybe consider
   using fewer items in your lists).
 
-* The stylesheet is incomplete (not great).
+* All headings are bold, even non-numbered ones (¯\_(ツ)_/¯).
+
+* Anchors for section numbers aren't highlighted as links (no problem).
 
 * The document publication date isn't in the same place in the document header
   (annoying, but not fatal).
@@ -52,4 +52,5 @@ This isn't perfect, but it's close.  Known differences:
 
 * All links are links (clear win).
 
-* Superscripts and subscripts are rendered as superscripts and subscripts (meh).
+* Superscripts and subscripts are rendered as superscripts and subscripts
+  (harder to fix than it seems).
