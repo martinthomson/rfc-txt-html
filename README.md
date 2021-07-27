@@ -47,7 +47,7 @@ This isn't perfect, but it's close.  Known differences:
 * Ordered lists with ten or more items don't render identically (maybe consider
   using fewer items in your lists).
 
-* All headings are bold, even non-numbered ones (¯\_(ツ)_/¯).
+* All headings are bold, even non-numbered ones (¯\\_(ツ)_/¯).
 
 * Anchors for section numbers aren't highlighted as links (no problem).
 
