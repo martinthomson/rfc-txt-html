@@ -183,10 +183,14 @@ a.relref, a.xref {
 .pilcrow {
   display: inline-block;
   margin-right: -1ch;
-  opacity: 0.05;
+  opacity: 0.01;
+  text-decoration: none;
 }
 :hover > .pilcrow {
-  opacity: 0.5;
+  opacity: 0.2;
+}
+* > .pilcrow[href]:hover {
+  opacity: 0.6;
 }
 
 /* Authors */
