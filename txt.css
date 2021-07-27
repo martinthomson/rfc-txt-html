@@ -183,7 +183,7 @@ a.relref, a.xref {
 .pilcrow {
   display: inline-block;
   margin-right: -1ch;
-  opacity: 0.125;
+  opacity: 0.05;
 }
 :hover > .pilcrow {
   opacity: 0.5;
