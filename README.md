@@ -1,4 +1,4 @@
-# Make an HTML RFC look like a text one
+# Make an HTML RFC look just like a text RFC
 
 IETF RFCs are now being rendered into HTML.  This is good.  HTML is great.
 
@@ -29,7 +29,7 @@ flag:
 xml2rfc --css=../path/to/txt.css --html draft-foo.xml
 ```
 
-## Bugs
+## Variances from Text Format
 
 This isn't perfect, but it's close.  Known differences:
 
