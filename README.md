@@ -20,6 +20,15 @@ does just that.
 Try a side-by-side comparison of [RFC
 9000](https://martinthomson.github.io/rfc-txt-html/diff.html).
 
+## Usage
+
+Use this with [xml2rfc](https://pypi.org/project/xml2rfc/) with the `--css`
+flag:
+
+```
+xml2rfc --css=../path/to/txt.css --html draft-foo.xml
+```
+
 ## Bugs
 
 This isn't perfect, but it's close.  Known differences:
