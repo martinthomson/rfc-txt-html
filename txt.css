@@ -27,6 +27,10 @@ p {
 aside, ol, dl, figure {
   margin: var(--block);
 }
+blockquote {
+  margin: var(--paragraph);
+  border-left: 2px solid darkgrey;
+}
 
 /* Header junk */
 #external-metadata {
