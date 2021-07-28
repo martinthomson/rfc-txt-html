@@ -29,6 +29,9 @@ aside, ol, dl, figure {
 }
 
 /* Header junk */
+#external-metadata {
+  display: none !important; /* metadata.min.js is evil because it produces unstyleable goop */
+}
 .ears, #identifiers .label-stream, #identifiers .label-authors, #identifiers .label-rfc {
   display: none;
 }
@@ -40,17 +43,24 @@ aside, ol, dl, figure {
   margin-right: 1ch;
 }
 #identifiers dd {
-  margin: 0;
+  margin: 0 25ch 0 0;
 }
 #identifiers .rfc::before {
   content: 'Request for Comments: ';
 }
-#identifiers .authors {
+#identifiers dd.authors {
   display: block;
   position: absolute;
   text-align: right;
   top: 0;
   right: 0;
+  margin: 0;
+}
+#identifiers dd.updates {
+  margin-left: 9ch;
+}
+#identifiers dd.obsoletes {
+  margin-left: 11ch;
 }
 
 #title {
