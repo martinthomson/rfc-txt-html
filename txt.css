@@ -151,24 +151,25 @@ dd.break {
 pre {
   margin: var(--line) 0;
 }
-.artwork, .sourcecode {
+div:is(.artwork, .sourcecode) {
   display: flex;
   flex-wrap: nowrap;
   align-items: end;
 }
-:is(.artwork, .sourcecode)::before {
+div:is(.artwork, .sourcecode)::before {
   flex: 0 1 3ch;
   content: "";
 }
-:is(.artwork, .sourcecode) pre {
+div:is(.artwork, .sourcecode) pre {
   flex: 0 0 69ch;
   margin: 0;
 }
-:is(.artwork, .sourcecode) .pilcrow {
+div:is(.artwork, .sourcecode) .pilcrow {
   flex: 1 0 1ch;
 }
 figcaption, table caption {
   text-align: center;
+  margin-top: var(--line);
 }
 table {
   --half-line: calc(var(--line) / 2 - 1px);
