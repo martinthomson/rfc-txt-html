@@ -156,16 +156,25 @@ div:is(.artwork, .sourcecode) {
   flex-wrap: nowrap;
   align-items: end;
 }
+div:is(.artwork, .sourcecode).alignCenter {
+  justify-content: center;
+}
+div:is(.artwork, .sourcecode).alignRight {
+  justify-content: end;
+}
 div:is(.artwork, .sourcecode)::before {
   flex: 0 1 3ch;
   content: "";
 }
+div:is(.artwork, .sourcecode).alignRight::before {
+  flex-grow: 1;
+}
 div:is(.artwork, .sourcecode) pre {
-  flex: 0 0 69ch;
+  flex: 0 0 auto;
   margin: 0;
 }
 div:is(.artwork, .sourcecode) .pilcrow {
-  flex: 1 0 1ch;
+  flex: 0 0 1ch;
 }
 figcaption, table caption {
   text-align: center;
