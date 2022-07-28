@@ -1,5 +1,5 @@
 :root {
-  --line: 1.15em;
+  --line: 1.2em;
   --block: 0 0 0 3ch;
   --paragraph: var(--line) 0 var(--line) 3ch;
 }
@@ -43,7 +43,7 @@ blockquote {
   display: none;
 }
 #identifiers {
-  margin: 4em 0 0 0; /* Use a bogus alignment to align with text rendering */
+  margin: 0;
   position: relative;
 }
 #identifiers dt {
