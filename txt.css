@@ -244,6 +244,9 @@ address {
 h2 + address {
   margin-top: 1em;
 }
-address .email {
+address .tel, address .email {
   margin: var(--line) 0 0;
+}
+address .tel + .email {
+  margin: 0;
 }
