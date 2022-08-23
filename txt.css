@@ -236,6 +236,11 @@ a.relref, a.xref {
   opacity: 0.6;
 }
 
+/* sup, sub */
+sup, sub {
+  line-height: 1.1;
+}
+
 /* Authors */
 address {
   font-style: normal;
