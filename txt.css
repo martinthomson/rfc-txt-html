@@ -45,6 +45,13 @@ blockquote {
 #identifiers {
   margin: 0;
   position: relative;
+  /* This next is nasty.  If there are many more authors than there is metadata,
+   * the approach this uses to place author details in the right column will
+   * cause the authors to overlap the document title.  This sets a minimum
+   * heading size, so documents with a short header will have a lot of extra
+   * space.  Also, if there are more than 5 authors (assuming each takes 2
+   * lines), this might not be enough. */
+  min-height: calc(10 * var(--line));
 }
 #identifiers dt {
   margin-right: 1ch;
