@@ -48,7 +48,7 @@ blockquote {
 #identifiers {
   margin: 0;
   display: grid;
-  grid-template-columns: 48ch 24ch;
+  grid-template-columns: 47ch 24ch;
   column-gap: 1ch;
   grid-auto-flow: column;
   grid-auto-rows: auto;
