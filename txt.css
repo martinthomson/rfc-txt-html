@@ -39,48 +39,86 @@ blockquote {
 #external-metadata {
   display: none !important; /* metadata.min.js is evil because it produces unstyleable goop */
 }
-.ears, #identifiers :is(.label-stream, .label-authors, .label-rfc) {
+#identifiers dt:is(.label-stream, .label-rfc, .label-std, .label-bcp, .label-internet-draft,
+                   .label-workgroup, .label-intended-status, .label-obsoletes, .label-updates,
+                   .label-published, .label-expires, .label-category, .label-issn,
+                   .label-authors), .ears {
   display: none;
 }
 #identifiers {
   margin: 0;
-  /* HAXX: use a two-column layout here.
-   * We want an asymmetric layout of 47 [1] [24],
-   * so let it overflow and hide that overflow. */
-  columns: 47ch 2;
+  display: grid;
+  grid-template-columns: 48ch 24ch;
   column-gap: 1ch;
-  width: 95ch;
-  overflow: hidden;
+  grid-auto-flow: column;
+  grid-auto-rows: auto;
+  row-gap: 0;
 }
 #identifiers dt {
-  margin-right: 1ch;
-  break-before: avoid;
+  margin: 0 1ch 0 0;
+  float: revert;
+  display: inline-block;
 }
 #identifiers dd {
-  margin: 0 0 0 8ch;
-  break-inside: avoid-column;
-}
-#identifiers .rfc::before {
-  content: 'Request for Comments: ';
-}
-#identifiers :is(.stream, .rfc) {
   margin: 0;
+  width: 47ch;
 }
-#identifiers dd.authors {
-  break-before: always; /* This is poorly supported ... */
-  display: inline-block; /* ... so use this hack */
-  width: 24ch;
-  margin: 0 23ch 0 0;
-  min-height: calc(8 * var(--line));
+#identifiers dd::before {
+  margin: 0 1ch 0 0;
 }
-#identifiers dd.authors * {
-  text-align: right;
+#identifiers dd.rfc::before {
+  content: "Request for Comments:";
 }
-#identifiers dd.updates {
-  margin-left: 9ch;
+#identifiers dd.std::before {
+  content: "STD:";
+}
+#identifiers dd.bcp::before {
+  content: "BCP:";
+}
+#identifiers dd.internet-draft::before {
+  content: "Internet-Draft:";
+}
+#identifiers dd.workgroup::before {
+  content: "Workgroup:";
+}
+#identifiers dd.intended-status::before {
+  content: "Intended Status:";
+}
+#identifiers dd.obsoletes::before {
+  content: "Obsoletes:";
+  margin-left: -11ch;
 }
 #identifiers dd.obsoletes {
-  margin-left: 11ch;
+  padding-left: 11ch;
+  width: 36ch;
+}
+#identifiers dd.updates::before {
+  content: "Updates:";
+  margin-left: -9ch;
+}
+#identifiers dd.updates {
+  padding-left: 9ch;
+  width: 38ch;
+}
+#identifiers dd.updates::first-line {
+  padding-left: 0;
+}
+#identifiers dd.published::before {
+  content: "Published:";
+}
+#identifiers dd.expires::before {
+  content: "Expires:";
+}
+#identifiers dd.category::before {
+  content: "Category:";
+}
+#identifiers dd.issn::before {
+  content: "ISSN:";
+}
+#identifiers dd.authors {
+  grid-area: 1 / 2 / 100 / 3;
+  width: 24ch;
+  text-align: right;
 }
 
 #title {
