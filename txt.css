@@ -44,31 +44,37 @@ blockquote {
 }
 #identifiers {
   margin: 0;
-  position: relative;
-  /* This next is nasty.  If there are many more authors than there is metadata,
-   * the approach this uses to place author details in the right column will
-   * cause the authors to overlap the document title.  This sets a minimum
-   * heading size, so documents with a short header will have a lot of extra
-   * space.  Also, if there are more than 5 authors (assuming each takes 2
-   * lines), this might not be enough. */
-  min-height: calc(10 * var(--line));
+  /* HAXX: use a two-column layout here.
+   * We want an asymmetric layout of 47 [1] [24],
+   * so let it overflow and hide that overflow. */
+  columns: 47ch 2;
+  column-gap: 1ch;
+  width: 95ch;
+  overflow: hidden;
 }
 #identifiers dt {
   margin-right: 1ch;
+  break-before: avoid;
 }
 #identifiers dd {
-  margin: 0 25ch 0 0;
+  margin: 0 0 0 8ch;
+  break-inside: avoid-column;
 }
 #identifiers .rfc::before {
   content: 'Request for Comments: ';
 }
-#identifiers dd.authors {
-  display: block;
-  position: absolute;
-  text-align: right;
-  top: 0;
-  right: 0;
+#identifiers :is(.stream, .rfc) {
   margin: 0;
+}
+#identifiers dd.authors {
+  break-before: always; /* This is poorly supported ... */
+  display: inline-block; /* ... so use this hack */
+  width: 24ch;
+  margin: 0 23ch 0 0;
+  min-height: calc(8 * var(--line));
+}
+#identifiers dd.authors * {
+  text-align: right;
 }
 #identifiers dd.updates {
   margin-left: 9ch;
@@ -78,6 +84,7 @@ blockquote {
 }
 
 #title {
+  clear: left;
   text-align: center;
   margin-top: 2em;
 }
@@ -139,9 +146,11 @@ dt {
   float: left;
   clear: left;
   margin: 0 2ch 0 0;
+  break-after: avoid;
 }
 dd {
   margin: var(--paragraph);
+  break-before: avoid;
 }
 dl.compact :is(dt, dd) {
   margin-top: 0;
