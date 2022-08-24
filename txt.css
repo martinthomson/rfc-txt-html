@@ -274,8 +274,10 @@ a.selfRef, a.pilcrow {
   text-decoration: none;
 }
 a.relref, a.xref {
-  white-space: nowrap;
   hyphens: none;
+}
+a.relref, a.xref.cite {
+  white-space: nowrap;
 }
 .pilcrow {
   display: inline-block;
