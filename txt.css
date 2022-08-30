@@ -49,10 +49,8 @@ blockquote {
   margin: 0;
   display: grid;
   grid-template-columns: 47ch 24ch;
-  column-gap: 1ch;
-  grid-auto-flow: column;
   grid-auto-rows: auto;
-  row-gap: 0;
+  gap: 0 1ch;
 }
 #identifiers dt {
   margin: 0 1ch 0 0;
@@ -60,8 +58,12 @@ blockquote {
   display: inline-block;
 }
 #identifiers dd {
+  grid-column: 1;
   margin: 0;
   width: 47ch;
+  /* HAXX: this gets around the lack of text-content-trim support */
+  display: flex;
+  flex-wrap: wrap;
 }
 #identifiers dd::before {
   margin: 0 1ch 0 0;
@@ -100,11 +102,6 @@ blockquote {
   padding-left: 8ch;
   width: 39ch;
 }
-#identifiers dd:is(.updates, .obsoletes) {
-  /* HAXX: this gets around the lack of text-content-trim support */
-  display: flex;
-  flex-wrap: wrap;
-}
 #identifiers dd:is(.updates, .obsoletes) a {
   margin: 0 0 0 1ch;
 }
@@ -127,6 +124,7 @@ blockquote {
   grid-area: 1 / 2 / 100 / 3;
   width: 24ch;
   text-align: right;
+  display: block;
 }
 
 #title {
