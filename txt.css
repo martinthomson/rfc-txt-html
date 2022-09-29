@@ -233,8 +233,10 @@ div:is(.artwork, .sourcecode).alignRight::before {
   flex-grow: 1;
 }
 div:is(.artwork, .sourcecode) pre {
-  flex: 0 0 auto;
+  flex: 0 0 content;
   margin: 0;
+  max-width: 72ch;
+  overflow: auto;
 }
 div:is(.artwork, .sourcecode) .pilcrow {
   flex: 0 0 1ch;
