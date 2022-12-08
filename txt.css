@@ -47,10 +47,6 @@ blockquote {
 }
 #identifiers {
   margin: 0;
-  display: grid;
-  grid-template-columns: 47ch 24ch;
-  grid-auto-rows: auto;
-  gap: 0 1ch;
 }
 #identifiers dt {
   margin: 0 1ch 0 0;
@@ -58,7 +54,6 @@ blockquote {
   display: inline-block;
 }
 #identifiers dd {
-  grid-column: 1;
   margin: 0;
   width: 47ch;
   /* HAXX: this gets around the lack of text-content-trim support */
@@ -106,7 +101,7 @@ blockquote {
   margin: 0 0 0 1ch;
 }
 #identifiers dd:is(.updates, .obsoletes) a:last-of-type {
-  margin: 0 1ch;
+  margin-right: 1ch;
 }
 #identifiers dd.published::before {
   content: "Published:";
@@ -120,11 +115,40 @@ blockquote {
 #identifiers dd.issn::before {
   content: "ISSN:";
 }
-#identifiers dd.authors {
-  grid-area: 1 / 2 / 100 / 3;
-  width: 24ch;
-  text-align: right;
-  display: block;
+/* #identifiers styling for when grid layout is supported, or not */
+@supports(display: grid) {
+  #identifiers {
+    display: grid;
+    grid-template-columns: 47ch 24ch;
+    grid-auto-rows: auto;
+    gap: 0 1ch;
+  }
+  #identifiers dd {
+    grid-column: 1;
+  }
+  #identifiers dd.authors {
+    grid-area: 1 / 2 / 100 / 3;
+    width: 24ch;
+    text-align: right;
+    display: block;
+  }
+}
+@supports not (display: grid) {
+  #identifiers dd.authors {
+    padding-left: 8ch;
+    width: 64ch;
+  }
+  #identifiers dd.authors::before {
+    content: "Authors:";
+    margin: 0 0 0 -8ch;
+  }
+  #identifiers dd.authors .author {
+    display: inline-block;
+    margin: 0 2ch 0 1ch;
+  }
+  #identifiers dd.authors .author:last-of-type {
+    margin-right: 0;
+  }
 }
 
 #title {
@@ -134,6 +158,9 @@ blockquote {
 }
 #rfcnum {
   display: none;
+}
+:is(.status-of-memo, .copyright) a {
+  white-space: nowrap;
 }
 .toplink {
   display: none;
@@ -284,7 +311,7 @@ a.selfRef, a.pilcrow {
 a.relref, a.xref {
   hyphens: none;
 }
-a.relref, a.xref.cite {
+a:is(.relref, .xref:is(.cite, .auto.internal)) {
   white-space: nowrap;
 }
 .pilcrow {
