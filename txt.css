@@ -319,6 +319,7 @@ a:is(.relref, .xref:is(.cite, .auto.internal)) {
   margin-right: -1ch;
   opacity: 0.01;
   text-decoration: none;
+  user-select: none;
 }
 :hover > .pilcrow {
   opacity: 0.2;
