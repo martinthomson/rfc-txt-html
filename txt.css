@@ -233,7 +233,7 @@ dl.references dt {
 dl.references dd {
   margin-left: 11ch;
 }
-dd.break {
+:is(dd, span).break {
   display: none;
 }
 
