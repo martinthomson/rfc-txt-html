@@ -159,7 +159,7 @@ blockquote {
 #rfcnum {
   display: none;
 }
-:is(.status-of-memo, .copyright) a {
+:is(#status-of-memo, #copyright) a {
   white-space: nowrap;
 }
 .toplink {
