@@ -115,6 +115,26 @@ blockquote {
 #identifiers dd.issn::before {
   content: "ISSN:";
 }
+
+/* Thanks WeasyPrint for not supporting @supports */
+/* @supports not (display: grid) { */
+  #identifiers dd.authors {
+    padding-left: 8ch;
+    width: 64ch;
+  }
+  #identifiers dd.authors::before {
+    content: "Authors:";
+    margin: 0 0 0 -8ch;
+  }
+  #identifiers dd.authors .author {
+    display: inline-block;
+    margin: 0 2ch 0 1ch;
+  }
+  #identifiers dd.authors .author:last-of-type {
+    margin-right: 0;
+  }
+/* } */
+
 /* #identifiers styling for when grid layout is supported, or not */
 @supports(display: grid) {
   #identifiers {
@@ -131,23 +151,16 @@ blockquote {
     width: 24ch;
     text-align: right;
     display: block;
+    /* overrides for @supports not block */
+    padding-left: 0;
   }
-}
-@supports not (display: grid) {
-  #identifiers dd.authors {
-    padding-left: 8ch;
-    width: 64ch;
-  }
+  /* more overrides for @supports not block */
   #identifiers dd.authors::before {
-    content: "Authors:";
-    margin: 0 0 0 -8ch;
+    display: none;
   }
   #identifiers dd.authors .author {
-    display: inline-block;
-    margin: 0 2ch 0 1ch;
-  }
-  #identifiers dd.authors .author:last-of-type {
-    margin-right: 0;
+    display: block;
+    margin: 0;
   }
 }
 
