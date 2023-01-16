@@ -1,14 +1,8 @@
-:root {
+.xml2rfc {
   --line: 1.2em;
   --block: 0 0 0 3ch;
   --paragraph: var(--line) 0 var(--line) 3ch;
-}
 
-body {
-  color: black;
-  font-family: monospace;
-  font-size: 1em;
-  line-height: var(--line);
   width: 72ch;
   margin: var(--line) 3ch;
   /* Really long lines can wrap when all else fails.
@@ -16,7 +10,12 @@ body {
    * Mostly this exists so that long URLs wrap properly in Safari, which
    * doesn't break words at '/' like other browsers. */
   overflow-wrap: break-word;
+
+  font-family: monospace;
+  font-size: 1em;
+  line-height: var(--line);
 }
+
 h1, h2, h3, h4, h5 {
   font-weight: bold;
   font-size: inherit;
@@ -140,7 +139,7 @@ blockquote {
   }
 /* } */
 
-/* #identifiers styling for when grid layout is supported, or not */
+/* #identifiers styling for when grid layout is supported */
 @supports(display: grid) {
   #identifiers {
     display: grid;
