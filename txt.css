@@ -225,15 +225,14 @@ li {
   margin: var(--line) 0;
   padding: 0 0 0 2ch;
 }
-.compact li {
+:is(.ulCompact,.olCompact) li, li.compact, li.compact p {
   margin: 0;
 }
-:is(li, dd) p:first-child {
-  margin: 0;
+dl, dt {
+  clear: left;
 }
 dt {
   float: left;
-  clear: left;
   margin: 0 2ch 0 0;
   break-after: avoid;
 }
@@ -241,8 +240,18 @@ dd {
   margin: var(--paragraph);
   break-before: avoid;
 }
-dl.compact :is(dt, dd) {
+:is(dl.compact, .dlCompact) > :is(dt, dd) {
   margin-top: 0;
+  margin-bottom: 0;
+}
+:is(dl.compact, .dlCompact) > dd > :is(:first-child, .break:first-child + *) {
+  margin-top: 0;
+}
+:is(dl.compact, .dlCompact) > dd > :is(:first-child, .break:first-child + *):last-child {
+  margin-bottom: 0;
+}
+dl > dd > dl {
+  margin-top: var(--line);
   margin-bottom: 0;
 }
 dl.references dt {
