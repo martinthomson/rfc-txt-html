@@ -238,7 +238,18 @@ dt {
 }
 dd {
   margin: var(--paragraph);
+  margin-left: 3ch !important; /* override attribute added by xml2rfc */
+  padding: 0;
   break-before: avoid;
+}
+dd > div > :is(p, dl, ol, ul), dd > :is(p, dl, ol, ul) {
+  margin: 0;
+}
+dl.olPercent > dt {
+  min-width: 4ch;
+}
+dl.olPercent > dd {
+  margin-left: 6ch !important; /* as above */
 }
 :is(dl.compact, .dlCompact) > :is(dt, dd) {
   margin-top: 0;
