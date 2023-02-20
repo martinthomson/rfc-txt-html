@@ -60,6 +60,7 @@ blockquote {
 }
 #identifiers dd {
   margin: 0;
+  margin-left: 0 !important; /* grr */
   width: 47ch;
   /* HAXX: this gets around the lack of text-content-trim support */
   display: flex;
