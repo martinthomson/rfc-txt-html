@@ -177,7 +177,7 @@ blockquote {
 #title {
   clear: left;
   text-align: center;
-  margin-top: 2em;
+  margin-top: calc(2 * var(--line));
 }
 #rfcnum {
   display: none;
