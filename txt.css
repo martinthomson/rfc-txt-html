@@ -156,28 +156,40 @@ blockquote {
   #identifiers dd {
     grid-column: 1;
   }
-  #identifiers dd.authors {
-    grid-area: 1 / 2 / 100 / 3;
+  #identifiers dd:is(.published, .authors) {
+    display: block;
     width: 24ch;
     text-align: right;
-    display: block;
     /* overrides for @supports not block */
     padding-left: 0;
   }
-  /* more overrides for @supports not block */
-  #identifiers dd.authors::before {
-    display: none;
+  #identifiers dd.published {
+    grid-area: -2 / 2 / -1 / 3;
+  }
+  #identifiers dd.authors {
+    grid-area: -42 / 2 / -2 / 3;
   }
   #identifiers dd.authors .author {
     display: block;
     margin: 0;
+  }
+  #identifiers dd.internet-draft {
+    grid-area: -2 / 1 / -1 / 3;
+    display: block;
+    width: 72ch;
+    text-align: center;
+    margin: calc(4 * var(--line)) 0 calc(-5 * var(--line));
+  }
+  /* more overrides for @supports not block */
+  #identifiers dd:is(.published, .authors, .internet-draft)::before {
+    display: none;
   }
 }
 
 #title {
   clear: left;
   text-align: center;
-  margin-top: 2em;
+  margin: calc(2 * var(--line)) 3ch;
 }
 #rfcnum {
   display: none;
