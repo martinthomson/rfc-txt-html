@@ -278,10 +278,10 @@ dl.references dd {
 :is(dd, span).break {
   display: none;
 }
-:is(li, dd) :is(p, ol, ul:not(.toc), dl):not(:first-child) {
+:is(li, dd, blockquote, aside) :is(p, ol, ul:not(.toc), dl):not(:first-child) {
   margin-top: var(--line);
 }
-:is(li, dd) .break:first-child + :is(p, ol, ul, dl) {
+:is(li, dd, blockquote, aside) .break:first-child + :is(p, ol, ul, dl) {
   margin-top: 0;
 }
 :is(ol:is(.compact, .olCompact), ul:is(.compact, .ulCompact)) > li,
