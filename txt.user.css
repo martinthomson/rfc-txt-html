@@ -1,0 +1,19 @@
+/* ==UserStyle==
+@name           RFC Text
+@namespace      https://github.com/martinthomson/rfc-txt-html
+@version        1.0.0
+@description    Restyle HTML RFCs to look like text
+@author         Martin Thomson <mt@lowentropy.net>
+@homepageURL    https://github.com/martinthomson/rfc-txt-html
+@supportURL     https://github.com/martinthomson/rfc-txt-html/issues
+@preprocessor   default
+
+==/UserStyle== */
+@-moz-document regexp("https://(?:www\\.)ietf\\.org/(?:archive/id/draft-|rfc/rfc).*\\.html(?:#.*)?"),
+               regexp("https://(?:www\\.)rfc-editor\\.org/rfc/(?:internet-drafts/draft-.*-|rfc)\\d+(?:\\.html)?(?:#.*)?") {
+
+@import url("https://martinthomson.github.io/rfc-txt-html/txt.css");
+
+/* TODO - cleanup of bad rules */
+
+} /* @-moz-document */
