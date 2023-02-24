@@ -14,6 +14,26 @@
 
 @import url("https://martinthomson.github.io/rfc-txt-html/txt.css");
 
-/* TODO - cleanup of bad rules */
+body {
+    max-width: 72ch;
+    padding: 0;
+    line-height: var(--line) !important;
+    font-family: monospace !important;
+    font-size: 1em !important;
+}
+#internal-metadata, #title, h1, h2, h3, h4, h5 {
+    padding: 0;
+}
+div:is(.alignLeft, .alignCenter, .alignRight) {
+	margin: 0;
+}
+#title {
+	border: none;
+	margin: var(--line) 0;
+}
+dl > dd {
+	margin: var(--paragraph);
+	min-height: unset;
+}
 
 } /* @-moz-document */
