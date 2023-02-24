@@ -273,7 +273,7 @@ dl.references dt {
   margin-right: 1ch;
 }
 dl.references dd {
-  margin-left: 11ch;
+  margin-left: 11ch !important; /* grr */
 }
 :is(dd, span).break {
   display: none;

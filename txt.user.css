@@ -20,16 +20,21 @@ body {
     line-height: var(--line) !important;
     font-family: monospace !important;
     font-size: 1em !important;
-    font-style: normal !important;
 }
-#internal-metadata, #title, #toc, #toc :is(h2, nav),
-h1, h2, h3, h4, h5, pre, p {
+#internal-metadata, #title, #toc, #toc :is(h2, nav), .section-number,
+h1, h2, h3, h4, h5, pre, p, aside {
     padding: 0;
 }
 #toc, div:is(.alignLeft, .alignCenter, .alignRight) {
 	margin: 0;
 }
-#title, #toc h2, pre {
+#toc h2 {
+    font-weight: normal;
+}
+#identifiers .authors .org, figcaption, caption {
+  font-style: normal;
+}
+#title, #toc h2 {
 	border: none;
 	margin: var(--line) 0;
 }
@@ -44,6 +49,9 @@ h1, h2, h3, h4, h5, pre, p {
 	bottom: unset;
 	overflow: unset;
 }
+nav.toc li {
+	text-indent: 0;
+}
 div, span {
     position: unset;
 }
@@ -54,6 +62,17 @@ tt, code, pre {
 dl > dd {
 	margin: var(--paragraph);
 	min-height: unset;
+}
+th, tr:nth-child(2n+1) > td {
+	background-color: unset;
+}
+aside, pre {
+    border: none;
+    margin: var(--block);
+}
+.references dt {
+	text-align: left;
+	font-weight: bold;
 }
 
 } /* @-moz-document */
