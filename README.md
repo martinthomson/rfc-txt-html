@@ -63,3 +63,16 @@ This isn't perfect, but it's close.  Known differences:
 
 * Superscripts and subscripts are rendered as superscripts and subscripts
   (harder to fix than it seems).
+
+## User Style
+
+This is available as a user style.  It is incompatible with [this user
+style](https://github.com/martinthomson/rfc-css).
+
+To install this, you need a userstyle extension for your browser:
+
+🎨 Stylus for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), [Chrome](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne) or [Opera](https://addons.opera.com/en-gb/extensions/details/stylus/).<br>
+🎨 xStyle for [Firefox](https://addons.mozilla.org/firefox/addon/xstyle/) or [Chrome](https://chrome.google.com/webstore/detail/xstyle/hncgkmhphmncjohllpoleelnibpmccpj).<br>
+🎨 [Stylish](https://userstyles.org).
+
+📦 [Install the usercss](https://martinthomson.github.io/rfc-txt-html/txt.user.css).
