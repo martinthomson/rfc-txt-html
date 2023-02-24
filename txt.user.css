@@ -20,16 +20,36 @@ body {
     line-height: var(--line) !important;
     font-family: monospace !important;
     font-size: 1em !important;
+    font-style: normal !important;
 }
-#internal-metadata, #title, h1, h2, h3, h4, h5 {
+#internal-metadata, #title, #toc, #toc :is(h2, nav),
+h1, h2, h3, h4, h5, pre, p {
     padding: 0;
 }
-div:is(.alignLeft, .alignCenter, .alignRight) {
+#toc, div:is(.alignLeft, .alignCenter, .alignRight) {
 	margin: 0;
 }
-#title {
+#title, #toc h2, pre {
 	border: none;
 	margin: var(--line) 0;
+}
+#toc {
+	position: unset;
+	top: unset;
+	right: unset;
+	width: unset;
+}
+#toc nav {
+	height: unset;
+	bottom: unset;
+	overflow: unset;
+}
+div, span {
+    position: unset;
+}
+tt, code, pre {
+	background-color: unset;
+	font-family: unset;
 }
 dl > dd {
 	margin: var(--paragraph);
