@@ -15,64 +15,70 @@
 @import url("https://martinthomson.github.io/rfc-txt-html/txt.css");
 
 body {
-    max-width: 72ch;
-    padding: 0;
-    line-height: var(--line) !important;
-    font-family: monospace !important;
-    font-size: 1em !important;
+  max-width: 72ch;
+  padding: 0;
+  line-height: var(--line) !important;
+  font-family: monospace !important;
+  font-size: 1em !important;
 }
 #internal-metadata, #title, #toc, #toc :is(h2, nav), .section-number,
 h1, h2, h3, h4, h5, pre, p, aside {
-    padding: 0;
+  padding: 0;
 }
 #toc, div:is(.alignLeft, .alignCenter, .alignRight) {
-	margin: 0;
+  margin: 0;
 }
 #toc h2 {
-    font-weight: normal;
+  font-weight: normal;
 }
 #identifiers .authors .org, figcaption, caption {
   font-style: normal;
 }
 #title, #toc h2 {
-	border: none;
-	margin: var(--line) 0;
+  border: none;
+  margin: var(--line) 0;
 }
 #toc {
-	position: unset;
-	top: unset;
-	right: unset;
-	width: unset;
+  position: unset;
+  top: unset;
+  right: unset;
+  width: unset;
 }
 #toc nav {
-	height: unset;
-	bottom: unset;
-	overflow: unset;
+  height: unset;
+  bottom: unset;
+  overflow: unset;
 }
 nav.toc li {
-	text-indent: 0;
+  text-indent: 0;
+}
+ul.ulBare, li.ulBare {
+  margin-left: 0 !important;
+}
+nav.toc > ul > li {
+  padding-left: 6ch;
 }
 div, span {
-    position: unset;
+  position: unset;
 }
 tt, code, pre {
-	background-color: unset;
-	font-family: unset;
+  background-color: unset;
+  font-family: unset;
 }
 dl > dd {
-	margin: var(--paragraph);
-	min-height: unset;
+  margin: var(--paragraph);
+  min-height: unset;
 }
 th, tr:nth-child(2n+1) > td {
-	background-color: unset;
+  background-color: unset;
 }
 aside, pre {
-    border: none;
-    margin: var(--block);
+  border: none;
+  margin: var(--block);
 }
 .references dt {
-	text-align: left;
-	font-weight: bold;
+  text-align: left;
+  font-weight: bold;
 }
 
 } /* @-moz-document */
