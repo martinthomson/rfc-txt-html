@@ -21,15 +21,18 @@ body {
   font-family: monospace !important;
   font-size: 1em !important;
 }
-#internal-metadata, #title, #toc, #toc :is(h2, nav), .section-number,
+#internal-metadata, #title, #toc, #toc :is(h2, nav), .section-number, .author,
 h1, h2, h3, h4, h5, pre, p, aside {
   padding: 0;
+}
+#identifiers {
+  font-size: unset;
 }
 #toc, div:is(.alignLeft, .alignCenter, .alignRight) {
   margin: 0;
 }
 #toc h2 {
-  font-weight: normal;
+  font-weight: bold;
 }
 #identifiers .authors .org, figcaption, caption {
   font-style: normal;
@@ -51,6 +54,8 @@ h1, h2, h3, h4, h5, pre, p, aside {
 }
 nav.toc li {
   text-indent: 0;
+  line-height: var(--line);
+  margin: 0;
 }
 ul.ulBare, li.ulBare {
   margin-left: 0 !important;
@@ -79,6 +84,16 @@ aside, pre {
 .references dt {
   text-align: left;
   font-weight: bold;
+  min-width: unset;
+}
+.rfcEditorRemove {
+  position: unset;
+  padding: 0;
+  background-color: unset;
+  border-radius: unset;
+}
+.rfcEditorRemove::before {
+  content: unset;
 }
 
 } /* @-moz-document */
