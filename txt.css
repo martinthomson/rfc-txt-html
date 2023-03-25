@@ -400,3 +400,12 @@ address .tel, address .email {
 address .tel + .email {
   margin: 0;
 }
+
+/* haxx */
+section > p, section > dl.references > dd {
+  /* Really long lines can wrap when all else fails.
+   * This won't affect <pre> or <table>, or cases where soft-wrapping occurs.
+   * Mostly this exists so that long URLs wrap properly in Safari, which
+   * doesn't break words at '/' like other browsers. */
+  overflow-wrap: break-word;
+}
