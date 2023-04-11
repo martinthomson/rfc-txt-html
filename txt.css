@@ -97,7 +97,6 @@ blockquote {
 }
 #identifiers dd.obsoletes {
   padding-left: 10ch;
-  width: 37ch;
 }
 #identifiers dd.updates::before {
   content: "Updates:";
@@ -105,7 +104,6 @@ blockquote {
 }
 #identifiers dd.updates {
   padding-left: 8ch;
-  width: 39ch;
 }
 #identifiers dd:is(.updates, .obsoletes) a {
   margin: 0 0 0 1ch;
