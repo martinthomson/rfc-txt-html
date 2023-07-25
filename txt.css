@@ -370,7 +370,7 @@ a:is(.relref, .xref:is(.cite, .auto.internal)) {
   text-decoration: none;
   user-select: none;
 }
-:hover > .pilcrow {
+:hover > .pilcrow, .pilcrow:focus {
   opacity: 0.2;
 }
 * > .pilcrow[href]:hover {
