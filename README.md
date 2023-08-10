@@ -64,6 +64,11 @@ This isn't perfect, but it's close.  Known differences:
 * Superscripts and subscripts are rendered as superscripts and subscripts
   (harder to fix than it seems).
 
+* References are sometimes wrapped differently.  xml2rfc text layout places
+  reference text on the next line if a label is too long.  Longer URLs are
+  often wrapped differently (see
+  [#13](https://github.com/martinthomson/rfc-txt-html/issues/13)).
+
 ## User Style
 
 This is available as a user style.  It is incompatible with [this user
