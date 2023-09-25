@@ -294,6 +294,7 @@ div:is(.artwork, .sourcecode) {
   display: flex;
   flex-wrap: nowrap;
   align-items: end;
+  clear: left; /* for <dt>...</dt><dd><div class="artwork">... */
 }
 div:is(.artwork, .sourcecode).alignCenter {
   justify-content: center;
