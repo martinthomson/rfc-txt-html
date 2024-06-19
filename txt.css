@@ -29,6 +29,7 @@ section > p, section > div > p {
 }
 aside {
   margin: var(--block);
+  padding: var(--block);
 }
 figure {
   margin: 0;
