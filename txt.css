@@ -120,53 +120,20 @@ blockquote {
   content: "ISSN:";
 }
 
-/* Thanks WeasyPrint for not supporting @supports */
-/* @supports not (display: grid) { */
-  #identifiers dd.authors {
-    padding-left: 8ch;
-    width: 64ch;
-  }
-  #identifiers dd.authors::before {
-    content: "Authors:";
-    margin: 0 0 0 -8ch;
-  }
-  #identifiers dd.authors .author {
-    display: inline-block;
-    margin: 0 2ch 0 1ch;
-    min-height: calc(2 * var(--line));
-  }
-  #identifiers dd.authors .author:last-of-type {
-    margin-right: 0;
-  }
-/* } */
-
-/* #identifiers styling for when grid layout is supported, or not */
-@supports(display: grid) {
-  #identifiers {
-    display: grid;
-    grid-template-columns: 47ch 24ch;
-    grid-auto-rows: auto;
-    gap: 0 1ch;
-  }
-  #identifiers dd {
-    grid-column: 1;
-  }
-  #identifiers dd.authors {
-    grid-area: 1 / 2 / 100 / 3;
-    width: 24ch;
-    text-align: right;
-    display: block;
-    /* overrides for @supports not block */
-    padding-left: 0;
-  }
-  /* more overrides for @supports not block */
-  #identifiers dd.authors::before {
-    display: none;
-  }
-  #identifiers dd.authors .author {
-    display: block;
-    margin: 0;
-  }
+#identifiers {
+  display: grid;
+  grid-template-columns: 47ch 24ch;
+  grid-auto-rows: auto;
+  gap: 0 1ch;
+}
+#identifiers dd {
+  grid-column: 1;
+}
+#identifiers dd.authors {
+  grid-area: 1 / 2 / 100 / 3;
+  width: 24ch;
+  text-align: right;
+  display: block;
 }
 
 #title {
@@ -315,7 +282,7 @@ div:is(.artwork, .sourcecode) pre {
   flex: 0 0 content;
   margin: 0;
   max-width: 72ch;
-  overflow: auto;
+  overflow: auto clip;
 }
 div:is(.artwork, .sourcecode) .pilcrow {
   flex: 0 0 1ch;
