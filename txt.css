@@ -236,8 +236,9 @@ dl.references {
 
   display: flex;
   flex-flow: row wrap;
-  width: calc(100% - var(--indent));
+  width: calc(100% - 3ch);
   padding-left: var(--indent);
+  margin: var(--block);
 
   dt {
     flex: 0 0 max-content;
