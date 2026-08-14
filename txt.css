@@ -1,11 +1,13 @@
 :root {
+  color-scheme: light dark;
   --line: 1.3em;
   --block: 0 0 0 3ch;
   --paragraph: var(--line) 0 var(--line) 3ch;
 }
 
 body {
-  color: black;
+  color: light-dark(black, white);
+  background-color: light-dark(white, black);
   font-family: monospace;
   font-size: 1em;
   line-height: var(--line);
